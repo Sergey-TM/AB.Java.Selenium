@@ -41,9 +41,6 @@ public class TabsActions extends TabsComponents {
 
 
 
-
-
-
     public void waitUntilElementClickable(WebElement element) throws Error{
         try{
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));

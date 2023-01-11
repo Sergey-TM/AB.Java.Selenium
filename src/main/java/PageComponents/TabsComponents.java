@@ -12,7 +12,6 @@ public class TabsComponents {
         this.driver=driver;
     }
 
-    //public String url1 = "https://demoqa.com/browser-windows";
 
     public WebElement newtabBtn() {
         return driver.findElement(By.xpath("//button[@id='tabButton']"));
