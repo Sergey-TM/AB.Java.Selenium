@@ -1,9 +1,9 @@
 package PageActions;
 import PageComponents.FormComponents;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
-import java.time.Duration;
 
 public class FormActions extends FormComponents {
 
@@ -14,6 +14,8 @@ public class FormActions extends FormComponents {
         super(webDriver);
         driver = webDriver;
     }
+
+
 
 
     public void firstNameFieldSK() {
@@ -27,17 +29,36 @@ public class FormActions extends FormComponents {
     }
     public void genderRadioBtnClick() {genderRadioBtn().click();}
     public void mobileFieldSK() {
-        mobileField().sendKeys("111222333");
+        mobileField().sendKeys("1112223334");
     }
+    public void stateFieldclick() { stateField().click();}
     public void submitBtnClick() { submitBtn().click();}
+
     public String getModalTitle() {  return modalTitle().getText(); }
 
-public void scrollPage(){
+
+
+    public void scrollPage(){
         JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].scrollIntoView(true)",submitBtn());
+        jse.executeScript("arguments[0].scrollIntoView();",submitBtn());
+     }
+
+
+
+
+    /* public void mobileView(){
+         Map<String, Object> deviceMetrics = new HashMap<>();
+         deviceMetrics.put("width", 375);
+         deviceMetrics.put("height", 812);
+         deviceMetrics.put("devisescaleFactor", 0);
+         deviceMetrics.put("mobile", true);
+
+         driver.executeCdpCommand("Emulation.setDeviceMetricsOverride", deviceMetrics);
+     }*/
+
+
+
+
 }
-
-
-    }
 
 

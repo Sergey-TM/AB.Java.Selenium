@@ -10,8 +10,6 @@ public class FormComponents {
         this.driver=driver;
     }
 
-
-
     public WebElement firstNameField() {
         return driver.findElement(By.xpath("//input[@id='firstName']"));
     }
@@ -43,9 +41,7 @@ public class FormComponents {
     public WebElement choseFileField() {
         return driver.findElement(By.xpath(""));
     }
-    public WebElement stateField() {
-        return driver.findElement(By.xpath(""));
-    }
+    public WebElement stateField() {   return  driver.findElement(By.xpath("//div[@id='state']"));    }
     public WebElement cityField() {
         return driver.findElement(By.xpath(""));
     }
@@ -54,8 +50,8 @@ public class FormComponents {
     public WebElement submitBtn() {
         return driver.findElement(By.xpath("//button[@id='submit']"));
     }
-    public WebElement modalTitle() {
-        return driver.findElement(By.xpath("//div[@id='example-modal-sizes-title-lg']"));
-    }
 
+    //Modal window
+    public WebElement modalTitle() { return driver.findElement(By.xpath("//div[@id='example-modal-sizes-title-lg']"));}
+    public WebElement getTable() { return driver.findElement(By.xpath("//div[@class='table-responsive']")); }
 }

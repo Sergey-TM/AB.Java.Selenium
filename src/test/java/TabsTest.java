@@ -1,30 +1,24 @@
 import PageActions.TabsActions;
-import PageComponents.TabsComponents;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import java.time.Duration;
 
 public class TabsTest {
      WebDriver driver;
      TabsActions tabsActions;
-     TabsComponents pageComponents;
-
 
     @BeforeTest
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "D:\\Projects\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\DriversSelenium\\chromedriver.exe");
         driver = new ChromeDriver();
         tabsActions = new TabsActions(driver);
-        pageComponents = new TabsComponents(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.manage().window().maximize();
-        driver.navigate().to("https://demoqa.com/");
-    }
+        driver.navigate().to("https://demoqa.com/browser-windows");    }
 
     @Test
     public void test2() {
@@ -40,19 +34,14 @@ public class TabsTest {
         driver.switchTo().window(maintab);
         //System.out.println(driver.getTitle());
         //verify 1st tab title
-        Assert.assertEquals(driver.getTitle(),"Tools");
+        Assert.assertEquals(driver.getTitle(),"ToolsQA");
     }
-
-
 
 
     @AfterTest
         public void close() {
             driver.quit();
         }
-
-
-
     }
 
 

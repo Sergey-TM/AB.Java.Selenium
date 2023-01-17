@@ -1,5 +1,4 @@
 import PageActions.WidgetsActions;
-import PageComponents.WidgetsComponents;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -7,7 +6,6 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.annotations.AfterTest;
-
 import java.time.Duration;
 
 
@@ -19,7 +17,7 @@ public class WidgetsTests {
 
     @BeforeTest
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "D:\\Projects\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\DriversSelenium\\chromedriver.exe");
         driver = new ChromeDriver();
         widgetsActions = new WidgetsActions(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));

@@ -1,7 +1,7 @@
 import PageActions.FormActions;
 import PageActions.TabsActions;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -9,6 +9,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import java.time.Duration;
+
 
 
 public class FormTests {
@@ -20,12 +21,12 @@ public class FormTests {
 
     @BeforeTest
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "D:\\Projects\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\DriversSelenium\\chromedriver.exe");
         driver = new ChromeDriver();
         formActions = new FormActions(driver);
         tabsActions = new TabsActions(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        driver.manage().window().maximize();
+        driver.manage().window().setSize(new Dimension(765,930));
         driver.navigate().to("https://demoqa.com/automation-practice-form");
     }
 
@@ -48,13 +49,8 @@ public class FormTests {
 
     }
 
-
     /*@AfterTest
     public void close() {
         driver.quit();
-    }
-
-     */
-
-
+    }     */
 }
