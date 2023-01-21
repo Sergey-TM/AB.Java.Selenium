@@ -3,6 +3,7 @@ package PageComponents;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class WidgetsComponents {
 
@@ -11,14 +12,10 @@ public class WidgetsComponents {
         this.driver=driver;
     }
 
-    public WebElement slider() {
-        return driver.findElement(By.xpath("//input[@type='range']"));
-    }
+    @FindBy(xpath = "//input[@type='range']")
+    public WebElement slider;
 
-    public WebElement sliderValue() {
-        return driver.findElement(By.xpath("//input[@id='sliderValue']"));
-    }
-
-
+    @FindBy(xpath = "//input[@id='sliderValue']")
+    public WebElement sliderValue;
 
 }
