@@ -1,8 +1,11 @@
 import PageActions.FormActions;
 import PageActions.TabsActions;
+import PageActions.TableActions;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -16,6 +19,10 @@ public class FormTests {
     WebDriver driver;
     FormActions formActions;
     TabsActions tabsActions;
+    TableActions tableActions;
+
+    WebElement tableelement = driver.findElement(By.xpath("//div[@class='table-responsive']"));
+
 
 
 
@@ -25,6 +32,7 @@ public class FormTests {
         driver = new ChromeDriver();
         formActions = new FormActions(driver);
         tabsActions = new TabsActions(driver);
+        TableActions table = new TableActions(tableelement, driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.manage().window().setSize(new Dimension(765,930));
         driver.navigate().to("https://demoqa.com/automation-practice-form");
@@ -46,6 +54,7 @@ public class FormTests {
         tabsActions.switchtolastTab();
         //verify modal title
         Assert.assertEquals(formActions.getModalTitle(), "Thanks for submitting the form");
+        System.out.println(tableActions.getValueFromCell(2,2));
 
     }
 
