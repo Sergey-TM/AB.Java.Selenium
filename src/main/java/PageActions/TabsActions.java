@@ -1,39 +1,58 @@
 package PageActions;
-import PageComponents.TabsComponents;
 
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.NoSuchElementException;
-
 import java.time.Duration;
 
 
-public class TabsActions extends TabsComponents {
+public class TabsActions  {
+
+    @FindBy(xpath = "//button[@id='tabButton']")
+    public WebElement newtabBtn;
+
+    @FindBy(xpath = "//h1[@id='sampleHeading']")
+    public WebElement newtabtext;
+
+
 
     private WebDriver driver;
+    private WebDriverWait wait;
+    public TabsActions (WebDriver driver){
+        this.driver=driver;
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    }
 
-    public TabsActions (WebDriver webDriver){
-        super(webDriver);
-        driver = webDriver;
+    public void open(){
+        driver.navigate().to("https://demoqa.com/browser-windows");
+        driver.manage().window().maximize();
+    }
+
+    public void switchTo(String tab){
+        driver.switchTo().window(tab);
+    }
+
+    public String getT(){
+        return driver.getTitle();
     }
 
     public void clickOnNewtabBtn(){
-        newtabBtn().click();
+        newtabBtn.click();
     }
 
     public String getLastTabtext(){
-        waitUntilElementClickable(newtabtext());
-        return newtabtext().getText();
+        waitUntilElementClickable(newtabtext);
+        return newtabtext.getText();
     }
 
 
     public void switchtolastTab(){
         for(String tab : driver.getWindowHandles()) {
             driver.switchTo().window(tab);
-        }
-    }
+        }}
 
     public String get1stTab(){
         return driver.getWindowHandle();
@@ -50,7 +69,4 @@ public class TabsActions extends TabsComponents {
             throw new Error("Element not loaded yet");
         }
     }
-
-
-
 }

@@ -1,4 +1,4 @@
-package PageComponents;
+/*package PageComponents;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -28,12 +28,5 @@ public class TabsComponents {
     //WebElement newwindowBtn = driver.findElement(By.xpath("//button[@id='windowButton']"));
     //WebElement newwindowmessageBtn = driver.findElement(By.xpath("//button[@id='messageWindowButton']"));
     //public String url1 = "https://demoqa.com/browser-windows";
-
-
-
-
-
-
-
-
 }
+*/

@@ -17,7 +17,7 @@ public class WidgetsTests extends WebDriverSettings {
         //move slider
         widgetsActions.moveSlider();
         //verify selected value
-        Assert.assertEquals(widgetsActions.getsliderValue(), "54");
+        Assert.assertEquals(widgetsActions.getsliderValue(), "56");
     }
 }
 

@@ -1,4 +1,4 @@
-package PageComponents;
+/*package PageComponents;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -19,3 +19,4 @@ public class WidgetsComponents {
     public WebElement sliderValue;
 
 }
+ */

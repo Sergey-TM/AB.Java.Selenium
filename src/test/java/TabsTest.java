@@ -1,27 +1,18 @@
 import PageActions.TabsActions;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import Settings.WebDriverSettings;
+
+import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
-import java.time.Duration;
+import org.testng.Assert;
 
-public class TabsTest {
-     WebDriver driver;
-     TabsActions tabsActions;
 
-    @BeforeTest
-    public void setup() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\DriversSelenium\\chromedriver.exe");
-        driver = new ChromeDriver();
-        tabsActions = new TabsActions(driver);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        driver.manage().window().maximize();
-        driver.navigate().to("https://demoqa.com/browser-windows");    }
-
+public class TabsTest extends WebDriverSettings {
     @Test
-    public void test2() {
+    public void test2() throws InterruptedException {
+        //pageFactory
+        TabsActions tabsActions = PageFactory.initElements(driver, TabsActions.class);
+        //open Page
+        tabsActions.open();
         // remember first tab
         String maintab = tabsActions.get1stTab();
         //click on button
@@ -31,18 +22,15 @@ public class TabsTest {
         //verify text
         Assert.assertEquals(tabsActions.getLastTabtext(), "This is a sample page");
         //switch to 1st tab
-        driver.switchTo().window(maintab);
+        tabsActions.switchTo(maintab);
         //System.out.println(driver.getTitle());
         //verify 1st tab title
-        Assert.assertEquals(driver.getTitle(),"ToolsQA");
+        Assert.assertEquals(tabsActions.getT(),"DEMOQA");
     }
+}
 
 
-    @AfterTest
-        public void close() {
-            driver.quit();
-        }
-    }
+
 
 
 

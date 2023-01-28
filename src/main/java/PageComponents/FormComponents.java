@@ -1,4 +1,4 @@
-package PageComponents;
+/*package PageComponents;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -55,3 +55,5 @@ public class FormComponents {
     public WebElement modalTitle() { return driver.findElement(By.xpath("//div[@id='example-modal-sizes-title-lg']"));}
     public WebElement getTable() { return driver.findElement(By.xpath("//div[@class='table-responsive']")); }
 }
+
+ */
