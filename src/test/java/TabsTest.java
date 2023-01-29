@@ -32,7 +32,7 @@ public class TabsTest {
         Assert.assertEquals(tabsActions.getLastTabtext(), "This is a sample page");
         //switch to 1st tab
         driver.switchTo().window(maintab);
-        //System.out.println(driver.getTitle());
+
         //verify 1st tab title
         Assert.assertEquals(driver.getTitle(),"ToolsQA");
     }

@@ -53,5 +53,5 @@ public class FormComponents {
 
     //Modal window
     public WebElement modalTitle() { return driver.findElement(By.xpath("//div[@id='example-modal-sizes-title-lg']"));}
-    public WebElement getTable() { return driver.findElement(By.xpath("//div[@class='table-responsive']")); }
+    //public WebElement tableelement = driver.findElement(By.xpath("//div[@class='table-responsive']"));
 }
