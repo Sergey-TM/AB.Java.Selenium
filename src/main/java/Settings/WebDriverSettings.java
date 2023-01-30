@@ -21,6 +21,7 @@ public class WebDriverSettings {
 
         @AfterTest
         public void close() {
+            driver.close();
             driver.quit();
         }
 }

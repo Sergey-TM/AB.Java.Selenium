@@ -36,8 +36,9 @@ public class FormActions  {
     public WebElement modalTitle;
 
     @FindBy(xpath = "//div[@class='table-responsive']")
-    public WebElement getTable;
+    public WebElement TableElement;
 
+    public String[] formData = {"First name", "Last name", "First name Last name","qa@i.ua","Male","1112223334" };
 
 
 
@@ -50,29 +51,26 @@ public class FormActions  {
 
     public void open(){
         driver.navigate().to("https://demoqa.com/automation-practice-form");
-        driver.manage().window().setSize(new Dimension(760,900));
+        driver.manage().window().setSize(new Dimension(760,960));
     }
 
 
     public void firstNameFieldSK() {
-        firstNameField.sendKeys("First name");
+        firstNameField.sendKeys(formData[0]);
     }
     public void lastNameFieldSK() {
-        lastNameField.sendKeys("Last name");
+        lastNameField.sendKeys(formData[1]);
     }
     public void emailFieldSK() {
-        emailField.sendKeys("qa@i.ua");
+        emailField.sendKeys(formData[3]);
     }
     public void genderRadioBtnClick() {genderRadioBtn.click();}
     public void mobileFieldSK() {
-        mobileField.sendKeys("1112223334");
+        mobileField.sendKeys(formData[5]);
     }
     public void stateFieldclick() { stateField.click();}
     public void submitBtnClick() { submitBtn.click();}
-
     public String getModalTitle() {  return modalTitle.getText(); }
-
-
 
     public void scrollPage(){
         JavascriptExecutor jse = (JavascriptExecutor) driver;

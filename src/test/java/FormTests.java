@@ -31,5 +31,11 @@ public class FormTests extends WebDriverSettings {
         tabsActions.switchtolastTab();
         //verify modal title
         Assert.assertEquals(formActions.getModalTitle(), "Thanks for submitting the form");
+        //verify modal data
+        TableActions tableActions = new TableActions(formActions.TableElement, driver);
+        Assert.assertEquals(tableActions.getValueFromCell(1,2), formActions.formData[2]);
+        Assert.assertEquals(tableActions.getValueFromCell(2,2), formActions.formData[3]);
+        Assert.assertEquals(tableActions.getValueFromCell(3,2), formActions.formData[4]);
+        Assert.assertEquals(tableActions.getValueFromCell(4,2), formActions.formData[5]);
     }
 }
