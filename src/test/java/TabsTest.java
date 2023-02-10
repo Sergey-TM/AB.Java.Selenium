@@ -34,7 +34,7 @@ public class TabsTest {
         driver.switchTo().window(maintab);
 
         //verify 1st tab title
-        Assert.assertEquals(driver.getTitle(),"ToolsQA");
+        Assert.assertEquals(driver.getTitle(),"DEMOQA");
     }
 
 

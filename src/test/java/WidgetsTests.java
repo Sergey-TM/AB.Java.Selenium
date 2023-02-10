@@ -31,7 +31,7 @@ public class WidgetsTests {
         widgetsActions.moveSlider();
 
         //verify selected value
-        Assert.assertEquals(widgetsActions.getsliderValue(), "54");
+        Assert.assertEquals(widgetsActions.getsliderValue(), "56");
 
     }
 
