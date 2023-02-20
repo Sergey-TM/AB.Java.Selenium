@@ -59,6 +59,7 @@ public class FormTests {
 
     @AfterTest
     public void close() {
+        driver.close();
         driver.quit();
     }
 }

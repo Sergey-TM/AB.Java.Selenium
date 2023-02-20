@@ -40,6 +40,7 @@ public class TabsTest {
 
     @AfterTest
         public void close() {
+            driver.close();
             driver.quit();
         }
     }

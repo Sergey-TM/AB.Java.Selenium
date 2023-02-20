@@ -38,6 +38,7 @@ public class WidgetsTests {
 
     @AfterTest
         public void close() {
+            driver.close();
             driver.quit();
         }
 }
